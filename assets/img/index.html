@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>Isaac Developer - Home</title>
+</head>
+<body>
+    
+
+
+
+    <section class="header_main">
+       <!--  <div class="header ">
+            <div class="header__class container">
+               
+    
+                <nav class="nav ">
+                    <ul>
+                        <li> <a href="#" class="ativa"> Home</a></li>
+                        <li> <a href="#">  Sobre</a></li>
+                        <li> <a href="#"> Porfólio</a></li>
+                        <li> <a href="#"> Contato</a></li>
+                    </ul>
+    
+                </nav>
+            </div>
+        </div> -->
+        <aside class="nav_arrow">
+            <div onclick="clicou()" id="menu-opener">
+                <img src="menu.png" width="36">
+            </div>
+            <div id="menu-area" >
+                <nav class="nav ">
+                    <ul>
+                        <li> <a href="#" class="ativa"> Home</a></li>
+                        <li> <a href="#">  Sobre</a></li>
+                        <li> <a href="#"> Porfólio</a></li>
+                        <li> <a href="#"> Contato</a></li>
+                    </ul>
+    
+                </nav>
+            </div>
+        </aside>
+        <div class="scene">
+            
+            <div class="rocket">
+                <img src="rocket.png" alt="">
+            </div>
+            <div class="img__header">
+                <p> <span>Programe</span>  sua vida com a gente que  <br> entende de <span data-text="programação...">programação...</span></p>
+            </div>
+            <div class="redes">
+                <a href=""><img src="facebook.svg" alt=""></a>
+                <a href=""><img src="contato.svg" alt=""></a>
+                <a href=""><img src="instagram.svg" alt=""></a>
+                <a href=""><img src="codigo-icon.svg" alt=""></a>
+                
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Isaac Developer</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="main">
+        
+    </section>
+    <script>
+        
+      /*   document.addEventListener("mousemove", function(e){
+            let rocket = document.querySelector('.rocket');
+            rocket.style.left = e.offsetX +'px';
+            rocket.style.top = e.offsetY +'px';
+        }) */
+       
+
+        function stars(){
+            let count = 20;
+            let scene = document.querySelector('.scene');
+            let i = 0;
+            while( i < count){
+                let star = document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerWidth);
+                let duration = Math.random() * 1;
+                let h = Math.random () * 100;
+                star.style.left = x + 'px';
+                star.style.width= 1 + 'px';
+                star.style.height= 50+h + 'px';
+                star.style.animationDuration = duration + 's';
+
+                scene.appendChild(star);
+                
+                i++
+
+            }
+        }
+        stars();
+        var elemento = document.querySelector('.rocket');
+        elemento.removeEventListener('onmouseout', stars()); 
+
+        
+function clicou () {
+    let menuArea = document.getElementById('menu-area');
+    if (menuArea.classList.contains('menu-opened') == true) {
+        menuArea.classList.remove('menu-opened')
+    } else {
+        menuArea.classList.add ('menu-opened')
+    }
+}
+    </script>
+</body>
+</html>
